@@ -1,0 +1,393 @@
+{
+    "books": [
+        {
+            "id": "878910",
+            "name": "三国",
+            "author": "罗贯中",
+            "img": "imgs/b1.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878911",
+            "name": "水浒",
+            "author": "吴承恩",
+            "img": "imgs/b2.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878912",
+            "name": "灯草和尚",
+            "author": "吴承恩",
+            "img": "imgs/b3.jpg",
+            "type": "new"
+        },
+        {
+            "id": "878913",
+            "name": "圣墟",
+            "author": "吴承恩",
+            "img": "imgs/b4.jpg",
+            "type": "new"
+        },
+        {
+            "id": "878914",
+            "name": "西厢记",
+            "author": "吴承恩",
+            "img": "imgs/b5.jpg",
+            "type": "new"
+        },
+        {
+            "id": "878936",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878915",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878916",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878917",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878918",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878919",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878920",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878921",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878922",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },{
+            "id": "878923",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        }
+        ,{
+            "id": "878924",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        },
+        {
+            "id": "878925",
+            "name": "金瓶梅",
+            "author": "吴承恩",
+            "img": "imgs/b6.jpg",
+            "type": "hot"
+        }
+    ],
+    "readers": [
+        {
+            "id": "007",
+            "name": "张三疯",
+            "age": 35
+        },
+        {
+            "id": "008",
+            "name": "张四疯",
+            "age": 32
+        }
+    ],
+    "banner": [
+        {
+            "id": 1001,
+            "body": [
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "1",
+                    "number":878910
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "2",
+                    "number":878911
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3",
+                    "number":878912
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4",
+                    "number":878913
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5",
+                    "number":878914
+                }
+            ]
+        },
+        {
+            "id": 1002,
+            "body": [
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "1",
+                    "number":878915
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "2",
+                    "number":878916
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3",
+                    "number":878917
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4",
+                    "number":878918
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5",
+                    "number":878919
+                }
+            ]
+        },
+        {
+            "id": 1003,
+            "body": [
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "1",
+                    "number":878920
+                },
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "2",
+                    "number":878921
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3",
+                    "number":878922
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4",
+                    "number":878923
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5",
+                    "number":878924
+                }
+            ]
+        },
+        {
+            "id": 1004,
+            "body": [
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "1",
+                    "number":878925
+                },
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "2",
+                    "number":878926
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "3",
+                    "number":878927
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4",
+                    "number":878928
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5",
+                    "number":878929
+                }
+            ]
+        },
+        {
+            "id": 1005,
+            "body": [
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "1",
+                    "number":878930
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "2",
+                    "number":878931
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3",
+                    "number":878932
+                },
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "4",
+                    "number":878933
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5",
+                    "number":878934
+                }
+            ]
+        },
+        {
+            "id": 1006,
+            "body": [
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "1"
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "2"
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "3"
+                },
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "4"
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "5"
+                }
+            ]
+        },
+        {
+            "id": 1007,
+            "body": [
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "1"
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "2"
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3"
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4"
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5"
+                }
+            ]
+        },
+        {
+            "id": 1008,
+            "body": [
+                {
+                    "url": "imgs/b1.jpg",
+                    "id": "1"
+                },
+                {
+                    "url": "imgs/b2.jpg",
+                    "id": "2"
+                },
+                {
+                    "url": "imgs/b3.jpg",
+                    "id": "3"
+                },
+                {
+                    "url": "imgs/b4.jpg",
+                    "id": "4"
+                },
+                {
+                    "url": "imgs/b5.jpg",
+                    "id": "5"
+                }
+            ]
+        }
+    ],
+    "search": [
+        {
+            "id": 1,
+            "des": "火影忍者",
+            "production_time": "new Date()",
+            "url": "/fire/"
+        },
+        {
+            "id": 2,
+            "des": "极限挑战 第六季",
+            "production_time": "new Date()",
+            "url": "/beat/"
+        },
+        {
+            "id": 3,
+            "des": "奔跑吧 第四季",
+            "production_time": "new Date()",
+            "url": "/running/"
+        },
+        {
+            "id": 4,
+            "des": "幸福触手可及! TV版",
+            "production_time": "new Date()",
+            "url": "/hanppy/"
+        },
+        {
+            "id": 5,
+            "des": "小猪佩奇 第七季",
+            "production_time": "new Date()",
+            "url": "/pig/"
+        }
+    ]
+}
