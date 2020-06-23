@@ -4,16 +4,15 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-21 00:25:27
+ * @LastEditTime: 2020-06-22 09:14:14
  */ 
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import { demo } from "./api/myMain";
-Vue.config.productionTip = false
-
-demo();
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+Vue.config.productionTip = false;
+import Mint from 'mint-ui';
+Vue.use(Mint);
 
 new Vue({
   router,

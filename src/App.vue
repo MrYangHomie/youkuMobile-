@@ -4,22 +4,75 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-21 00:42:59
+ * @LastEditTime: 2020-06-22 19:48:05
 --> 
 <template>
-  <div id="app">
-    <div id="nav">
-      <h1>优酷空项目</h1>
-      <h2>网络请求</h2>
-      <p>默认安装了swiper 和axios(axios 已经在utils文件下配置了拦截与响应，请求的时候，按照嘻嘻老师的方式 调用请求函数 需要注意this的指向问题，否则请求到数据无法渲染到组件中)</p>
-      <p>打开控制台是一个请求的实例 在src/api/myMain 的test函数</p>
-      <p>如果想要处理网络请求和一些特殊功能的话 ，请使用模块化的方式进行开发</p>
-      <h3>后端mock数据的来源及分工</h3>
-      <p>优酷视频列表建议使用json-server来模拟数据,登录注册、购物车由后端人员杨燚来完成</p>
-      <h3>webpack路径优化，请查看vue.config.js</h3>
-    </div>
+  <div class="main">
+    <my-header/>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
+<script>
+import myHeader  from "./components/myHeader";
+
+export default {
+  name:"App",
+  components:{
+    myHeader
+  }
+}
+</script>
+
 <style>
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}  /* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset,img {border:0 none}  /* 重置fieldset（表单分组）、图片的边框为0*/
+dl,ul,ol,menu,li {list-style:none}   /* 重置类表前导符号为onne,menu在HTML5中有效 */
+blockquote, q {quotes: none}   /* 重置嵌套引用的引号类型 */
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}  /* 重置嵌套引用*/
+input,select,textarea,button {vertical-align:middle}  /* 重置表单控件垂直居中*/
+button {border:0 none;background-color:transparent;cursor:pointer}  /* 重置表单button按钮效果 */
+body {background:#fff}   /* 重置body 页面背景为白色 */
+body,th,td,input,select,textarea,button {font-size:12px;line-height:1 ;font-family:"微软雅黑", "黑体","宋体";color:#666} /* 重置页面文字属性 */
+a {color:#666;text-decoration:none}  /* 重置链接a标签 */
+a:active, a:hover {text-decoration:none}   /* 重置链接a标签的鼠标滑动效果 */
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}  /* 重置样式标签的样式 */
+caption {display:none;}    /* 重置表格标题为隐藏 */
+table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */
+img{vertical-align:top}  /* 图片在当前行内的垂直位置 */
+ 
+/* 页面设置 */
+ 
+  /* 取消a标签点击后的虚线框 */
+a {outline: none;}  
+
+ 
+ /* 设置页面文字等在拖动鼠标选中情况下的背景色与文字颜色 */
+/* 
+::selection {color: #fff;background-color: #4C6E78;}    
+::-moz-selection {color: #fff;background-color: #4C6E78;} 
+*/
+ 
+/*清除浮动*/
+.clear{clear: both;}
+ 
+/*清除浮动--推荐使用*/
+.clearfix:before,.clearfix:after{content: '';display: table;}
+.clearfix:after{clear: both;}
+.clearAll::after{
+  content: "";
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  clear: both;
+}
+html{
+  font-size: 26.67vw;
+}
+body{
+  font-size: 0.16rem;
+}
 </style>
