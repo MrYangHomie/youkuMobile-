@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-22 17:24:39
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 00:44:56
+ * @LastEditTime: 2020-06-23 19:13:13
  */ 
 import service from "util/myAxios";
 
@@ -18,7 +18,6 @@ export function getVideo(options){
     })
     .then( res =>  {
         this.videolist = res.data[0].data;
-        console.log("watch了type的变化，重新的请求数据");
         //渲染数据列表
     })
     .catch( rej => console.log(rej));

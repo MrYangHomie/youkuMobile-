@@ -564,7 +564,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":false,
+                    "hascahnge":false
                 },
                 {
                     "mi_type": "剧集",
@@ -600,7 +602,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "电影",
@@ -636,7 +640,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "综艺",
@@ -672,7 +678,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "动漫",
@@ -708,7 +716,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "少儿",
@@ -780,7 +790,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "体育",
@@ -816,7 +828,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "文化",
@@ -852,7 +866,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 }
             ]
         },
@@ -893,7 +909,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "剧集",
@@ -929,7 +947,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "电影",
@@ -965,7 +985,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "综艺",
@@ -1001,7 +1023,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "动漫",
@@ -1037,7 +1061,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "少儿",
@@ -1073,7 +1099,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "热点",
@@ -1109,7 +1137,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "体育",
@@ -1145,7 +1175,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 },
                 {
                     "mi_type": "文化",
@@ -1181,7 +1213,9 @@
                             "url": "http://liangcang-material.alicdn.com/prod/upload/af0b5d25197441ba9c689a858d12b60c.jpg?x-oss-process=image/resize,w_751/format,webp/interlace,1",
                             "des": "独播"
                         }
-                    ]
+                    ],
+                    "hasmore":true,
+                    "hascahnge":true
                 }
             ]
         },

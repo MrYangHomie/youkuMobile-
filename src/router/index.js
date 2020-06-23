@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-22 16:00:32
+ * @LastEditTime: 2020-06-23 19:39:46
  */ 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -25,6 +25,7 @@ Vue.use(VueRouter);
       props:true
     },
     {
+      name:"choosetype",
       path:"/oncetype/:name",
       component:onceType,
       props:true

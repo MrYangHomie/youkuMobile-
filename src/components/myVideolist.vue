@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-22 13:36:11
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 11:13:19
+ * @LastEditTime: 2020-06-23 19:33:12
 --> 
 <template>
   <div>
@@ -28,10 +28,17 @@
           </div>
         </div>
       </div>
+      <div class="bottom-btn">
+        <span v-if="list.hascahnge" @click="totype(list.mi_type)">
+              更多精彩剧集
+              <i class="iconfont icon-icon-test9"></i>
+          </span>
+        <span v-if="list.hasmore">
+          换一换
+              <i class="iconfont icon-loop"></i>
+        </span>
+      </div>
     </div>
-    store中的值{{$store.state.age}}
-    {{age}}
-    <button @click="add">点击我修改</button>
   </div>
 </template>
 
@@ -53,11 +60,11 @@ export default {
       type: this.type
     });
     if( localStorage.getItem("data") ){
-      this.$store.commit("add",JSON.parse(localStorage.getItem("data")));
+      this.$store.commit("add",localStorage.getItem("data"));
     }
     // console.log("绑定了key，组件重新创建又被销毁");
     window.addEventListener("beforeunload",function(){
-      console.log("页面重新刷新前");
+      // console.log("页面重新刷新前");
       localStorage.setItem("data",this.$store.state.age);
     }.bind(this))
   },
@@ -67,6 +74,11 @@ export default {
     },
     add(){
       this.$store.commit("add");
+    },
+    totype(type){
+      this.$router.push({name:"choosetype",params:{name:type}});
+      //将状态的改变通知到vuex state 中
+      this.$store.dispatch("willcahnge",type);
     }
   },
   watch: {
@@ -83,6 +95,9 @@ export default {
 </script>
 
 <style scoped>
+/* 引入字体图标库的css */
+@import url("../../public/font_1700396_m9lb7eo4z1/iconfont.css");
+
 .main-list-box {
   width: 100%;
 }
@@ -116,5 +131,20 @@ export default {
 .type_list h2 {
   padding-left: 0.09rem;
   padding-bottom: 0.09rem;
+}
+
+.bottom-btn{
+  padding: 0.08rem;
+  display: flex;
+  justify-content: space-around;
+}
+.bottom-btn span {
+  display: inline-block;
+  padding: 0.1rem 0.05rem;
+  width: 40%;
+  background-color: #f5f5f5;
+  color:#666;
+  border-radius: 0.1rem;
+  text-align: center;
 }
 </style>

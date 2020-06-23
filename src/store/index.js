@@ -4,29 +4,34 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 11:06:57
+ * @LastEditTime: 2020-06-23 19:33:55
  */ 
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    age:10
+    age:10,
+    type:"首页"
   },
   mutations: {
     add(state,payload){
       if(!payload){
-        state.age++
-        console.log(111);
+        state.age++;
       }else{
         state.age = payload;
-        console.log(222);
       }
+    },
+    cahngetype(state,type){
+      state.type = type;
     }
   },
   actions: {
+    willcahnge:function(context,type){
+      context.commit("cahngetype",type);
+    }
   },
   modules: {
   }

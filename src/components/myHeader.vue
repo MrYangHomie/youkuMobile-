@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-16 23:11:43
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-22 22:57:55
+ * @LastEditTime: 2020-06-23 19:59:56
 --> 
 <template>
   <div class="header">
@@ -14,14 +14,13 @@
       </li>
       <li>
         <div>
-          <input type="text" placeholder="请输入搜索内容" @click="showSearch" />
+          <input type="text" :placeholder="$store.state.type" @click="showSearch" />
           <img src="https://img.alicdn.com/tfs/TB15zSoX21TBuNjy0FjXXajyXXa-48-48.png" />
         </div>
       </li>
       <li>
         <img
           src="https://img.alicdn.com/tfs/TB10zdbXL5TBuNjSspmXXaDRVXa-44-44.png"
-          alt
           id="default-user-img"
         />
       </li>
@@ -41,73 +40,95 @@
       <div @click="showSearch">关闭</div>
     </div>
     <div class="ser-items">
-         <ul class="clearAll myul" v-mydrag>
-             <router-link v-for="item in list" :class="{show:item.showclass}" :to="'/oncetype/'+item.name" :key="item.id" @click.native="changename(item.id)"  tag="li">{{item.name}}
-                <span v-show="item.showclass"></span>
-             </router-link>
-        </ul>
+      <ul class="clearAll myul" v-mydrag>
+        <router-link
+          v-for="item in list"
+          :class="{show:item.showclass = $store.state.type === item.name?true:false}"
+          :to="'/oncetype/'+item.name"
+          :key="item.id"
+          @click.native="changename($event,item.name)"
+          tag="li"
+        >
+          {{item.name}}
+          <span v-show="item.showclass"></span>
+        </router-link>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import {serach} from "../api/headerSerach";
+import { serach } from "../api/headerSerach";
 import { mydrag } from "dires/mydire";
 
 export default {
   name: "myHeader",
-  data(){
+  data() {
     return {
       isShowSearch: false,
       serachInfo: "",
-      list:[
-                {id:"1001",name:"首页",showclass:true},
-                {id:"1002",name:"会员",showclass:false},
-                {id:"1003",name:"剧集",showclass:false},
-                {id:"1004",name:"电影",showclass:false},
-                {id:"1005",name:"综艺",showclass:false},
-                {id:"1006",name:"动漫",showclass:false},
-                {id:"1007",name:"少儿",showclass:false},
-                {id:"1008",name:"教育",showclass:false},
-                {id:"1009",name:"生活",showclass:false},
-                {id:"1010",name:"游戏",showclass:false},
-                {id:"1011",name:"咨询",showclass:false},
-                {id:"1012",name:"体育",showclass:false},
-                {id:"1013",name:"文化",showclass:false},
-            ]
+      list: [
+        { id: "1001", name: "首页", showclass: true },
+        { id: "1002", name: "会员", showclass: false },
+        { id: "1003", name: "剧集", showclass: false },
+        { id: "1004", name: "电影", showclass: false },
+        { id: "1005", name: "综艺", showclass: false },
+        { id: "1006", name: "动漫", showclass: false },
+        { id: "1007", name: "少儿", showclass: false },
+        { id: "1008", name: "教育", showclass: false },
+        { id: "1009", name: "生活", showclass: false },
+        { id: "1010", name: "游戏", showclass: false },
+        { id: "1011", name: "咨询", showclass: false },
+        { id: "1012", name: "体育", showclass: false },
+        { id: "1013", name: "文化", showclass: false }
+      ],
+      trans_type:"首页"
     };
   },
   methods: {
-    changename(id){
-      this.list.forEach( item => {
+    changename(e, name) {
+      // this.$store.dispatch("willcahnge",)
+      this.list.forEach(item => {
         item.showclass = false;
-        if(id == item.id){
-        item.showclass = true;
+        if (name == item.name) {
+           this.$store.dispatch("willcahnge",name);
+          item.showclass = true;
         }
-      })
+      });
     },
     showSearch() {
       //给个延时器  防止空白
-      setTimeout( () => this.isShowSearch = !this.isShowSearch,500)
+      setTimeout(() => (this.isShowSearch = !this.isShowSearch), 500);
       //只请求一次
-     if(!this.serachInfo){
-          serach.call(this);
-     }
-    },
+      if (!this.serachInfo) {
+        serach.call(this);
+      }
+    }
   },
-  directives:{
-      mydrag
+  directives: {
+    mydrag
+  },
+  created() {
+    // this.trans_type
+    console.log("组件状态已经改变");
+    this.list.forEach(item => {
+      item.showclass = false;
+      if (this.$store.state.type == item.name) {
+        item.showclass = true;
+        console.log(this.$store.state.type);
+      }
+    });
   }
 };
 </script>
 
 <style scoped>
-.show{
-    color: blue;
-    font-weight: 700;
+.show {
+  color: blue;
+  font-weight: 700;
 }
-.myul{
-    touch-action: none;
+.myul {
+  touch-action: none;
 }
 .header {
   height: 0.44rem;
@@ -154,7 +175,7 @@ export default {
 .header .myheader li:nth-of-type(2) {
   position: relative;
 }
-.searchInfo{
+.searchInfo {
   position: absolute;
   width: 100%;
   z-index: 999;
@@ -208,28 +229,28 @@ export default {
   background-color: #f5f5f5;
   color: #222;
 }
-.ser-items{
-    width: 100%;
-    /* overflow: hidden; */
-    height: 0.4rem;
-    margin-top: -0.15rem;
-    background: #fff;
+.ser-items {
+  width: 100%;
+  /* overflow: hidden; */
+  height: 0.4rem;
+  margin-top: -0.15rem;
+  background: #fff;
 }
-.ser-items ul{
-    width: 9rem;
-    position: fixed;
+.ser-items ul {
+  width: 9rem;
+  position: fixed;
 }
 .ser-items ul li {
-    float: left;
-    padding: 0.1rem;
-    position: relative;
+  float: left;
+  padding: 0.1rem;
+  position: relative;
 }
-.ser-items ul li span{
+.ser-items ul li span {
   position: absolute;
   width: 0.05rem;
   height: 0.05rem;
   background-color: blue;
-  border-radius:50% ;
+  border-radius: 50%;
   left: 0.24rem;
   top: 0.3rem;
 }

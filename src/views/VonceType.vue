@@ -4,13 +4,13 @@
  * @Autor: YangYi
  * @Date: 2020-06-21 20:59:23
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 09:06:19
+ * @LastEditTime: 2020-06-23 19:38:12
 --> 
 <template>
   <div class="main">
     <my-banner :type="mytype" :key="mytype"/>
     <!-- <keep-alive> -->
-        <my-videolist :type="mytype" :key="'/'+mytype"/>
+    <my-videolist :type="mytype" :key="'/'+mytype"/>
     <!-- </keep-alive> -->
   </div>
 </template>
@@ -37,7 +37,6 @@ export default {
       name:function(){
         //或者this.name
         this.mytype = this.$route.params.name;
-        console.log(this.name);
       }
     },
     components:{
