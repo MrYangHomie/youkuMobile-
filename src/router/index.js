@@ -4,12 +4,16 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 19:39:46
+ * @LastEditTime: 2020-06-24 14:52:59
  */ 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 const onceType = () => import( /* webpackChunkName: 'index' */ "view/VonceType");
 // const videoList = () => import ( /* webpackChunkName: videolist */ "com/myVideolist");
+const originalPush = VueRouter.prototype.push
+   VueRouter.prototype.push = function push(location) {
+   return originalPush.call(this, location).catch(err => err)
+}
 
 Vue.use(VueRouter);
 

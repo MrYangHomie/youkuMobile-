@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-16 23:11:43
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 19:59:56
+ * @LastEditTime: 2020-06-25 00:03:07
 --> 
 <template>
   <div class="header">
@@ -40,7 +40,8 @@
       <div @click="showSearch">关闭</div>
     </div>
     <div class="ser-items">
-      <ul class="clearAll myul" v-mydrag>
+      <!-- 通过计算属性来修改left 的值 -->
+      <ul class="clearAll myul" v-mydrag :style="{transform: 'translateX('+$store.getters.moveing+')'}">
         <router-link
           v-for="item in list"
           :class="{show:item.showclass = $store.state.type === item.name?true:false}"
@@ -88,10 +89,13 @@ export default {
   methods: {
     changename(e, name) {
       // this.$store.dispatch("willcahnge",)
-      this.list.forEach(item => {
+      this.list.forEach((item,index) => {
         item.showclass = false;
         if (name == item.name) {
            this.$store.dispatch("willcahnge",name);
+           this.$store.commit("cahngeindex",index);
+           sessionStorage.setItem("left_positon",index);
+           //同样的修改 move_index 的索引
           item.showclass = true;
         }
       });

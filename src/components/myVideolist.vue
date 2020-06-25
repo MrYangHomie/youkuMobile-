@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-22 13:36:11
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 19:33:12
+ * @LastEditTime: 2020-06-24 23:25:02
 --> 
 <template>
   <div>
@@ -21,10 +21,10 @@
       <div class="main-list-box">
         <div class="main_box" v-for="(item,index) in list.img" :key="index">
           <div class="list-head" v-if="list.img[index].isbig">
-            <img :src="list.img[0].url" @click="todetail(list.img[0].num)" />
+            <img v-lazy="list.img[0].url" @click="todetail(list.img[0].num)" />
           </div>
           <div class="list-main" v-if="!(index===0)">
-            <img :src="list.img[index].url" @click="todetail(list.img[index].num)" />
+            <img v-lazy="list.img[index].url" @click="todetail(list.img[index].num)" />
           </div>
         </div>
       </div>
@@ -41,7 +41,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { getVideo } from "api/getVideoList";
 export default {
@@ -59,14 +58,27 @@ export default {
       url: "http://localhost:3000/indexlist",
       type: this.type
     });
-    if( localStorage.getItem("data") ){
-      this.$store.commit("add",localStorage.getItem("data"));
+    if( sessionStorage.getItem("data") ){
+      this.$store.commit("add",sessionStorage.getItem("data"));
+    }
+    if( sessionStorage.getItem("type") ){
+      this.$store.dispatch("willcahnge",sessionStorage.getItem("type"));
+      // console.log(this.$store.state.type,this.type);
+      // this.$router.push({name:"choosetype",params:{name:this.$store.state.type}});
     }
     // console.log("绑定了key，组件重新创建又被销毁");
     window.addEventListener("beforeunload",function(){
-      // console.log("页面重新刷新前");
-      localStorage.setItem("data",this.$store.state.age);
+      console.log("页面重新刷新前");
+      sessionStorage.setItem("data",this.$store.state.age);
+      sessionStorage.setItem("type",this.$store.state.type);
     }.bind(this))
+    //页面刷新，将保留的状态还原
+    if( sessionStorage.getItem("left_positon") ){
+      this.$store.commit("cahngeindex",sessionStorage.getItem("left_positon"));
+    }
+  },
+  mounted(){
+    
   },
   methods: {
     todetail(id) {
@@ -79,6 +91,22 @@ export default {
       this.$router.push({name:"choosetype",params:{name:type}});
       //将状态的改变通知到vuex state 中
       this.$store.dispatch("willcahnge",type);
+      //不进要修改vuex 数据，还要重新存一下这个type 在本地存储
+      sessionStorage.setItem("type",this.$store.state.type);
+      // console.log("hello world",this.$store.state.type,type);
+      //刷新页面的时候 将当前的type 存放到 本地存储中
+      //跳转的时候同时让头部的导航跟着一起运动
+      this.fllownav(type);
+    },
+    fllownav(type){
+       this.$store.state.list.forEach( (item,index) => {
+              if( item.name === type){
+                //通过vuex 告知给heade组件 
+                this.$store.commit("cahngeindex",index);
+                //把这个值存到本地存贮中 防止状态丢失
+                sessionStorage.setItem("left_positon",index);
+              }
+       } )
     }
   },
   watch: {

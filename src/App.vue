@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 19:46:04
+ * @LastEditTime: 2020-06-24 21:52:03
 --> 
 <template>
   <div class="main">
@@ -23,6 +23,7 @@ export default {
   components:{
     myHeader
   },
+
 }
 </script>
 

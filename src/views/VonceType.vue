@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-21 20:59:23
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-23 19:38:12
+ * @LastEditTime: 2020-06-24 21:55:12
 --> 
 <template>
   <div class="main">
@@ -26,7 +26,11 @@ export default {
       }
     },
     created(){
-     console.log("初始化组件");
+    //  console.log("初始化组件");
+      if(sessionStorage.getItem("type")){
+        this.mytype = sessionStorage.getItem("type");
+        //改用session  关闭浏览器即可下次进入到首页
+      }
     },
     methods:{
       tovideolist(){
