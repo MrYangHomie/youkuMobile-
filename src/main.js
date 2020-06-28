@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-24 10:29:41
+ * @LastEditTime: 2020-06-27 02:07:35
  */ 
 import Vue from 'vue';
 import App from './App.vue';
@@ -13,6 +13,7 @@ import store from './store';
 Vue.config.productionTip = false;
 import VueLazyload from 'vue-lazyload'
 import Mint from 'mint-ui';
+
 Vue.use(Mint);
 Vue.use(VueLazyload);
 new Vue({

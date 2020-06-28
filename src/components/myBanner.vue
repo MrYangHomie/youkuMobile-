@@ -4,10 +4,10 @@
  * @Autor: YangYi
  * @Date: 2020-06-21 23:13:14
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-22 22:56:44
+ * @LastEditTime: 2020-06-25 18:04:17
 --> 
 <template>
-  <div class="slider">
+  <div class="slider" v-show="$store.state.sellshow">
     <mt-swipe :auto="4000" :show-indicators="false">
       <mt-swipe-item v-for="img in imgs" :key="img.id">
         <img :src="'/'+img.url"/>
@@ -34,6 +34,7 @@ export default {
     }
   },
   created(){
+    if(this.type === "商城") return false;
     getImg.call(this,{
       url:"http://localhost:3000/banner",
       name:this.type

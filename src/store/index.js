@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-24 23:15:52
+ * @LastEditTime: 2020-06-26 15:26:34
  */ 
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -28,9 +28,12 @@ export default new Vuex.Store({
       { id: "1010", name: "游戏", showclass: false },
       { id: "1011", name: "咨询", showclass: false },
       { id: "1012", name: "体育", showclass: false },
-      { id: "1013", name: "文化", showclass: false }
+      { id: "1013", name: "文化", showclass: false },
+      { id: "1014", name: "商城", showclass: false}
     ],
-    move_index:0
+    move_index:0,
+    sellshow:true,
+    showheader:true
   },
   mutations: {
     add(state,payload){
@@ -47,6 +50,12 @@ export default new Vuex.Store({
     cahngeindex(state,index){
       state.move_index = index;
       console.log(state.move_index);
+    },
+    sellshow(state,show_bollean=true){
+      state.sellshow = show_bollean;
+    },
+    toggleheader(state,type=true){
+      state.showheader = type;
     }
   },
   actions: {

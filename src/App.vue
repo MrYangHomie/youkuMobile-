@@ -4,10 +4,10 @@
  * @Autor: YangYi
  * @Date: 2020-06-20 23:34:53
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-24 21:52:03
+ * @LastEditTime: 2020-06-25 20:44:47
 --> 
 <template>
-  <div class="main">
+  <div class="mymain">
     <my-header/>
     <keep-alive>
       <router-view></router-view>
@@ -17,12 +17,14 @@
 
 <script>
 import myHeader  from "./components/myHeader";
-
 export default {
   name:"App",
   components:{
     myHeader
   },
+  created(){
+
+  }
 
 }
 </script>

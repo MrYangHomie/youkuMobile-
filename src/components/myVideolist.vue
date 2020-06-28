@@ -4,7 +4,7 @@
  * @Autor: YangYi
  * @Date: 2020-06-22 13:36:11
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-24 23:25:02
+ * @LastEditTime: 2020-06-26 01:07:26
 --> 
 <template>
   <div>
@@ -30,12 +30,12 @@
       </div>
       <div class="bottom-btn">
         <span v-if="list.hascahnge" @click="totype(list.mi_type)">
-              更多精彩剧集
-              <i class="iconfont icon-icon-test9"></i>
-          </span>
+          更多精彩剧集
+          <i class="iconfont icon-icon-test9"></i>
+        </span>
         <span v-if="list.hasmore">
           换一换
-              <i class="iconfont icon-loop"></i>
+          <i class="iconfont icon-loop"></i>
         </span>
       </div>
     </div>
@@ -43,70 +43,76 @@
 </template>
 <script>
 import { getVideo } from "api/getVideoList";
+
 export default {
   name: "videoList",
   props: ["type"],
   data() {
     return {
       videolist: "",
-      age:""
+      age: ""
     };
   },
   created() {
     //返送请求渲染首页信息
-    getVideo.call(this, {
-      url: "http://localhost:3000/indexlist",
-      type: this.type
-    });
-    if( sessionStorage.getItem("data") ){
-      this.$store.commit("add",sessionStorage.getItem("data"));
+    if (this.type === "商城") {
+      console.log("");
+    } else {
+      getVideo.call(this, {
+        url: "http://localhost:3000/indexlist",
+        type: this.type
+      });
     }
-    if( sessionStorage.getItem("type") ){
-      this.$store.dispatch("willcahnge",sessionStorage.getItem("type"));
+    if (sessionStorage.getItem("data")) {
+      this.$store.commit("add", sessionStorage.getItem("data"));
+    }
+    if (sessionStorage.getItem("type")) {
+      this.$store.dispatch("willcahnge", sessionStorage.getItem("type"));
       // console.log(this.$store.state.type,this.type);
       // this.$router.push({name:"choosetype",params:{name:this.$store.state.type}});
     }
     // console.log("绑定了key，组件重新创建又被销毁");
-    window.addEventListener("beforeunload",function(){
-      console.log("页面重新刷新前");
-      sessionStorage.setItem("data",this.$store.state.age);
-      sessionStorage.setItem("type",this.$store.state.type);
-    }.bind(this))
+    window.addEventListener(
+      "beforeunload",
+      function() {
+        console.log("页面重新刷新前");
+        sessionStorage.setItem("data", this.$store.state.age);
+        sessionStorage.setItem("type", this.$store.state.type);
+      }.bind(this)
+    );
     //页面刷新，将保留的状态还原
-    if( sessionStorage.getItem("left_positon") ){
-      this.$store.commit("cahngeindex",sessionStorage.getItem("left_positon"));
+    if (sessionStorage.getItem("left_positon")) {
+      this.$store.commit("cahngeindex", sessionStorage.getItem("left_positon"));
     }
   },
-  mounted(){
-    
-  },
+  mounted() {},
   methods: {
     todetail(id) {
       console.log(id);
     },
-    add(){
+    add() {
       this.$store.commit("add");
     },
-    totype(type){
-      this.$router.push({name:"choosetype",params:{name:type}});
+    totype(type) {
+      this.$router.push({ name: "choosetype", params: { name: type } });
       //将状态的改变通知到vuex state 中
-      this.$store.dispatch("willcahnge",type);
+      this.$store.dispatch("willcahnge", type);
       //不进要修改vuex 数据，还要重新存一下这个type 在本地存储
-      sessionStorage.setItem("type",this.$store.state.type);
+      sessionStorage.setItem("type", this.$store.state.type);
       // console.log("hello world",this.$store.state.type,type);
       //刷新页面的时候 将当前的type 存放到 本地存储中
       //跳转的时候同时让头部的导航跟着一起运动
       this.fllownav(type);
     },
-    fllownav(type){
-       this.$store.state.list.forEach( (item,index) => {
-              if( item.name === type){
-                //通过vuex 告知给heade组件 
-                this.$store.commit("cahngeindex",index);
-                //把这个值存到本地存贮中 防止状态丢失
-                sessionStorage.setItem("left_positon",index);
-              }
-       } )
+    fllownav(type) {
+      this.$store.state.list.forEach((item, index) => {
+        if (item.name === type) {
+          //通过vuex 告知给heade组件
+          this.$store.commit("cahngeindex", index);
+          //把这个值存到本地存贮中 防止状态丢失
+          sessionStorage.setItem("left_positon", index);
+        }
+      });
     }
   },
   watch: {
@@ -161,7 +167,7 @@ export default {
   padding-bottom: 0.09rem;
 }
 
-.bottom-btn{
+.bottom-btn {
   padding: 0.08rem;
   display: flex;
   justify-content: space-around;
@@ -171,7 +177,7 @@ export default {
   padding: 0.1rem 0.05rem;
   width: 40%;
   background-color: #f5f5f5;
-  color:#666;
+  color: #666;
   border-radius: 0.1rem;
   text-align: center;
 }

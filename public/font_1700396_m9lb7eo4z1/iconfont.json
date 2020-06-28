@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6399125",
+      "name": "返回键",
+      "font_class": "weibiaoti--1",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "15362186",
+      "name": "avatar07",
+      "font_class": "07",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "15363117",
+      "name": "avatar05",
+      "font_class": "05",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
       "icon_id": "8106229",
       "name": "loop",
       "font_class": "loop",

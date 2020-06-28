@@ -4,10 +4,10 @@
  * @Autor: YangYi
  * @Date: 2020-06-16 23:11:43
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-25 00:03:07
+ * @LastEditTime: 2020-06-26 17:20:06
 --> 
 <template>
-  <div class="header">
+  <div class="header" v-show="$store.state.showheader">
     <ul class="myheader">
       <li>
         <img src="https://img.alicdn.com/tfs/TB1XqTXka61gK0jSZFlXXXDKFXa-180-36.png" />
@@ -18,7 +18,7 @@
           <img src="https://img.alicdn.com/tfs/TB15zSoX21TBuNjy0FjXXajyXXa-48-48.png" />
         </div>
       </li>
-      <li>
+      <li @click="tologin">
         <img
           src="https://img.alicdn.com/tfs/TB10zdbXL5TBuNjSspmXXaDRVXa-44-44.png"
           id="default-user-img"
@@ -81,9 +81,10 @@ export default {
         { id: "1010", name: "游戏", showclass: false },
         { id: "1011", name: "咨询", showclass: false },
         { id: "1012", name: "体育", showclass: false },
-        { id: "1013", name: "文化", showclass: false }
+        { id: "1013", name: "文化", showclass: false },
+        { id: "1014", name: "商城", showclass: false}
       ],
-      trans_type:"首页"
+      trans_type:"首页",
     };
   },
   methods: {
@@ -95,6 +96,13 @@ export default {
            this.$store.dispatch("willcahnge",name);
            this.$store.commit("cahngeindex",index);
            sessionStorage.setItem("left_positon",index);
+           //如果当前点击的是周边商城，那就让轮播图隐藏掉
+           if(name === "商城"){
+             this.$store.commit("sellshow",false);
+            //  console.log(this.$store.state.sellshow)
+           }else{
+              this.$store.commit("sellshow");
+           }
            //同样的修改 move_index 的索引
           item.showclass = true;
         }
@@ -107,6 +115,10 @@ export default {
       if (!this.serachInfo) {
         serach.call(this);
       }
+    },
+    tologin(){
+      this.$router.push({name:"login"});
+      this.$store.commit("toggleheader", false);
     }
   },
   directives: {
@@ -115,11 +127,12 @@ export default {
   created() {
     // this.trans_type
     console.log("组件状态已经改变");
+     this.$store.commit("toggleheader");
     this.list.forEach(item => {
       item.showclass = false;
       if (this.$store.state.type == item.name) {
         item.showclass = true;
-        console.log(this.$store.state.type);
+        // console.log(this.$store.state.type);
       }
     });
   }
@@ -220,6 +233,7 @@ export default {
   vertical-align: middle;
   color: #fff;
   text-align: center;
+  line-height: 0.24rem;
 }
 .searchInfo li > p {
   padding-left: 0.1rem;

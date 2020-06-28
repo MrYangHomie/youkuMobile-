@@ -4,19 +4,22 @@
  * @Autor: YangYi
  * @Date: 2020-06-21 20:59:23
  * @LastEditors: YangYi
- * @LastEditTime: 2020-06-24 21:55:12
+ * @LastEditTime: 2020-06-25 19:03:29
 --> 
 <template>
   <div class="main">
-    <my-banner :type="mytype" :key="mytype"/>
+    <my-banner :type="mytype" :key="mytype"  v-show="$store.state.sellshow"/>
     <!-- <keep-alive> -->
-    <my-videolist :type="mytype" :key="'/'+mytype"/>
+    <my-videolist :type="mytype" :key="'/'+mytype" v-show="$store.state.sellshow"/>
     <!-- </keep-alive> -->
+    <!-- 购物车页面与其他互斥 -->
+    <sellshop  v-show="!$store.state.sellshow"/>
   </div>
 </template>
 <script>
 import myBanner from "com/myBanner";
 import myVideolist from "com/myVideolist";
+import sellshop from "com/mySellShop.vue";
 export default {
     name:"onceType",
     props:["name"],
@@ -44,7 +47,7 @@ export default {
       }
     },
     components:{
-      myBanner,myVideolist
+      myBanner,myVideolist,sellshop
     }
 }
 </script>
